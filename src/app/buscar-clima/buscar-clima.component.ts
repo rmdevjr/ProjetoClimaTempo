@@ -11,26 +11,30 @@ import { ModelResponse } from './model.response';
 })
 export class BuscarClimaComponent implements OnInit {
 
-  public model:ModelResponse;
+  public model:ModelResponse[];
   estado="bahia";
   retorno:any;
-  value:any;
   city:any; 
+  modelResult
 
   constructor(private myservice: ServiceApiService) { }
 
   ngOnInit() {
-    this.myservice.getData(this.estado).subscribe((data) => {
-      this.model =  Object.create(data).data[0];
-      this.retorno = this.model
-      console.log(this.model)
-      
-    })
  };
 
-  // buscaValor(event) {
-  //   this.estado = event.target.value
-  // }
+
+ value(event){
+   this.estado = event.target.value
+ }
+
+  buscaValor() {
+    this.myservice.getData(this.estado).subscribe((data) => {
+      let resultData = Object.create(data).data[0];
+      this.modelResult = new ModelResponse(resultData.city_name,resultData.temp,resultData.country_code,resultData.state_code)
+      this.city = this.modelResult.city_name 
+      return this.modelResult
+    })
+  }
 
 
    mostraValor() {

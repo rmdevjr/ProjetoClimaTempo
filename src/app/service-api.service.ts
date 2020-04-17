@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ModelResponse } from './buscar-clima/model.response';
 
@@ -21,8 +21,10 @@ export class ServiceApiService {
   constructor(private http:HttpClient) { }
 
 
+  modelCall
 
-  getData(city:string) {
+  getData(city:string): Observable<ModelResponse[]>{
+    this.modelCall = this.http.get<ModelResponse[]>(apiUrl + city + finalUrl + apiKey);
     return this.http.get<ModelResponse[]>(apiUrl + city + finalUrl + apiKey);
  }
 

@@ -11,9 +11,9 @@
 <div class="content">
   <router-outlet></router-outlet>
   
-  <app-buscar-clima></app-buscar-clima>
+  <app-buscar-clima #buscaComponent></app-buscar-clima>
   <br/>
-  <app-mostra-tempo></app-mostra-tempo>
+  <app-mostra-tempo [testando]="teste"></app-mostra-tempo>
 
   <footer></footer>
 
