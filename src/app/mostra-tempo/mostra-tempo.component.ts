@@ -11,12 +11,13 @@ import { ModelResponse } from '../buscar-clima/model.response';
 export class MostraTempoComponent implements OnInit {
 
   model:ModelResponse[]
-  @Input() testando;
-  // dataModel = Object.create(this.newModelCall);
-  // city = this.dataModel.cit_name
 
   constructor(private service:ServiceApiService) { }
+  @Input() responses: any;
+  @Input() futureResponses: any;
+
   ngOnInit(){
+    // this.model = this.service.getWeatherItems()
   }
   mostra(){
 
