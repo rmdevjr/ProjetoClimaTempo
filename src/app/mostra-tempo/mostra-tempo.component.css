@@ -6,7 +6,7 @@
     letter-spacing: .3px;
     background-color: aliceblue;
     width: 400px;
-    height: 370px;
+    height: auto;
     border: 1px solid #707070;
     border-radius: 15px;
     padding: 40px;
@@ -57,17 +57,36 @@ img{
     font-size: 67px;
     color: #707070;
     font-weight: 700;
-    margin: 10px
+    margin: 0 10px
 }
 
 .legend1{
     font-size: 13px;
     color: #707070;
     font-weight: 700;
-    margin: 10px
+    margin: 0 10px
 }
 
 .column{
     display: flex;
     flex-direction: row;
+}
+
+.foward{
+    border-right-style: solid;
+    border-top-style: solid;
+    transform: rotateZ(134deg);
+    width: 10px;
+    height: 10px;
+    align-self: center;
+    margin: 0 15px;
+}
+.future{
+    display: flex;
+    align-self: center;
+}
+.futurePrev{
+    height: 400px;
+    background-color: cornsilk;
+    width: 400px;
 }
