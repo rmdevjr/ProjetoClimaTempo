@@ -3,39 +3,46 @@
 
     <div class="left">
         <h2 class="title" (click)="mostra()">Tempo agora em</h2> 
-        <h2 class="city">{{testando}}</h2>
+        <h2 class="city">{{responses.city_name}}</h2>
     </div>
 
     <div class="row">
-        <img src="./assets/icon/dom.svg">
+        <img src="https://www.weatherbit.io/static/img/icons/{{responses.icon}}.png">
         <div class="row2">
-            <p class="graus">22º</p>
-            <p class="legend1">Nuvens esparsas</p>
+            <p class="graus">{{responses.temp}}°</p>
+            <p class="legend1">{{responses.description}}</p>
         </div>
     </div>
     
     <div class="column">
         <div class="row2">
             <h3>Sensação</h3>
-            <p>22º</p>
+            <p>{{responses.app_temp}}°C</p>
         </div>
         
         <div class="row2">
-            <h3>Sensação</h3>
-            <p>69%</p>
+            <h3>Humidade</h3>
+            <p>{{responses.rh}}%</p>
         </div>
         
         <div class="row2">
             <h3>Pressão</h3>
-            <p>919 hPa</p>
+            <p>9{{responses.pres}}</p>
         </div>
 
         <div class="row2">
             <h3>Vento</h3>
-            <p>6 km/h</p>
+            <p>{{responses.wind_spd}}km/h</p>
         </div>
 
     </div>
 
     <p>Atualizado em horas</p>
+    <div class="future">
+        <p>Previsões Futuras</p><div class="foward"></div>
+    </div>
+    <div class="futurePrev">
+        {{futureResponses.temp}}
+    </div>
+    
 </div>
